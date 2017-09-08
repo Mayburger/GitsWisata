@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgredportrait"
+    android:orientation="vertical"
+    tools:context="com.nacoda.wisata.UploadActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/wisata" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorWhite"
+            android:text="Click the mountain to select the picture"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dimen_8dp"
+            android:orientation="vertical">
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:textColorHint="@android:color/white"
+                android:theme="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/etJudul"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Judul"
+                    android:inputType="text"
+                    android:textColor="@color/colorWhite" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:textColorHint="@android:color/white"
+                android:theme="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/etLokasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Lokasi"
+                    android:inputType="text"
+                    android:textColor="@color/colorWhite" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:textColorHint="@android:color/white"
+                android:theme="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/etKategori"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:hint="Kategori"
+                    android:lines="1"
+                    android:textColor="@color/colorWhite" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:textColorHint="@android:color/white"
+                android:theme="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/etDeskripsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Deskripsi"
+                    android:lines="1"
+                    android:onClick="birthdateOnClick"
+                    android:textColor="@color/colorWhite" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardUseCompatPadding="true">
+
+            <Button
+                android:id="@+id/btnUpload"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/sign_in"
+                android:textColor="@android:color/white" />
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+
+</ScrollView>
