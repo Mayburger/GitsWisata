@@ -26,6 +26,7 @@ import com.nacoda.wisata.gson.GsonWisata;
 import com.nacoda.wisata.presenter.Presenter;
 import com.nacoda.wisata.presenter.PresenterInterface;
 import com.nacoda.wisata.utilities.BannerData;
+import com.nacoda.wisata.utilities.UIHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,14 +56,8 @@ public class WisataActivity extends AppCompatActivity implements PresenterInterf
         dialogLoad = new Dialog(this);
         dialogLoad.setContentView(R.layout.loading_dialog);
 
-        /** Set the progressbar color to white **/
         ProgressBar progressBar = dialogLoad.findViewById(R.id.pbLoad);
-        if (progressBar != null) {
-            progressBar.setVisibility(View.VISIBLE);
-            progressBar.setIndeterminate(true);
-            progressBar.getIndeterminateDrawable().setColorFilter(0xFFFFFFFF, android.graphics.PorterDuff.Mode.MULTIPLY);
-        }
-        /** Set the progressbar color to white **/
+        UIHelper.ProgressBarWhite(progressBar);
 
         presenter = new Presenter(this);
         presenter.request_data(getApplicationContext(), 1, dialogLoad);
@@ -219,7 +214,14 @@ public class WisataActivity extends AppCompatActivity implements PresenterInterf
             @Override
             public void onClick(int position) {
 
-                Toast.makeText(WisataActivity.this, "" + bannerData.getId_Data(position), Toast.LENGTH_SHORT).show();
+                Intent detail = new Intent(WisataActivity.this, DetailActivity.class);
+
+
+                detail.putExtra("id_user", getIntent().getStringExtra("id_user"));
+                detail.putExtra("id_data", "" + gsonWisata.getData().get(position).getId_data());
+
+                startActivity(detail);
+
 
             }
         });

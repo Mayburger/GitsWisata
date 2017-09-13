@@ -1,7 +1,6 @@
 package com.nacoda.wisata.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -13,10 +12,9 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.nacoda.wisata.DetailActivity;
 import com.nacoda.wisata.R;
 import com.nacoda.wisata.gson.GsonWisata;
-import com.nacoda.wisata.utilities.Fonts;
+import com.nacoda.wisata.utilities.UIHelper;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -70,7 +68,7 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.ViewHolder
             }
         });
 
-        Fonts.RobotoLight(context, holder.tvWisata);
+        UIHelper.RobotoLight(context, holder.tvWisata);
 
         holder.tvWisata.setText(gsonWisata.get(position).getTitle());
         holder.rbWisata.setRating(gsonWisata.get(position).getRate());

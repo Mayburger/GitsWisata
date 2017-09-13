@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 import com.nacoda.wisata.presenter.Presenter;
 import com.nacoda.wisata.presenter.PresenterInterface;
-import com.nacoda.wisata.utilities.Fonts;
+import com.nacoda.wisata.utilities.UIHelper;
 
 import java.util.Locale;
 
@@ -66,14 +66,8 @@ public class RegisterActivity extends AppCompatActivity implements PresenterInte
         dialog.setContentView(R.layout.progress_dialog);
         presenter = new Presenter(this);
 
-        /** Set the progressbar color to white **/
         ProgressBar progressBar = dialog.findViewById(R.id.pbLoad);
-        if (progressBar != null) {
-            progressBar.setVisibility(View.VISIBLE);
-            progressBar.setIndeterminate(true);
-            progressBar.getIndeterminateDrawable().setColorFilter(0xFFFFFFFF, android.graphics.PorterDuff.Mode.MULTIPLY);
-        }
-        /** Set the progressbar color to white **/
+        UIHelper.ProgressBarWhite(progressBar);
 
 
         /** Request focus for dialogLoad input **/
@@ -116,18 +110,18 @@ public class RegisterActivity extends AppCompatActivity implements PresenterInte
     }
 
     /**
-     * Setting Fonts
+     * Setting UIHelper
      **/
     private void setFonts() {
-        Fonts.Montez(this, tvTitleRegister);
-        Fonts.RobotoLight(this, etFirstName);
-        Fonts.RobotoLight(this, etLastName);
-        Fonts.RobotoLight(this, etUsername);
-        Fonts.RobotoLight(this, etPassword);
-        Fonts.RobotoLight(this, etBirthdate);
-        Fonts.RobotoRegularButton(this, btnCreateAccount);
+        UIHelper.Montez(this, tvTitleRegister);
+        UIHelper.RobotoLight(this, etFirstName);
+        UIHelper.RobotoLight(this, etLastName);
+        UIHelper.RobotoLight(this, etUsername);
+        UIHelper.RobotoLight(this, etPassword);
+        UIHelper.RobotoLight(this, etBirthdate);
+        UIHelper.RobotoRegularButton(this, btnCreateAccount);
     }
-    /** Setting Fonts **/
+    /** Setting UIHelper **/
 
     /**
      * Register onClick

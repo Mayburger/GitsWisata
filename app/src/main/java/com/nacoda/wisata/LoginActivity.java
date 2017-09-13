@@ -16,7 +16,7 @@ import com.google.gson.GsonBuilder;
 import com.nacoda.wisata.gson.GsonRegister;
 import com.nacoda.wisata.presenter.Presenter;
 import com.nacoda.wisata.presenter.PresenterInterface;
-import com.nacoda.wisata.utilities.Fonts;
+import com.nacoda.wisata.utilities.UIHelper;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -42,10 +42,10 @@ public class LoginActivity extends AppCompatActivity implements PresenterInterfa
         setContentView(R.layout.activity_login);
         ButterKnife.inject(this);
 
-        Fonts.Montez(this, tvTitleLogin);
-        Fonts.RobotoLight(this, etUsername);
-        Fonts.RobotoLight(this, etPassword);
-        Fonts.RobotoRegularButton(this, btnRegister);
+        UIHelper.Montez(this, tvTitleLogin);
+        UIHelper.RobotoLight(this, etUsername);
+        UIHelper.RobotoLight(this, etPassword);
+        UIHelper.RobotoRegularButton(this, btnRegister);
 
         dialog = new Dialog(this);
         dialog.setContentView(R.layout.progress_dialog);

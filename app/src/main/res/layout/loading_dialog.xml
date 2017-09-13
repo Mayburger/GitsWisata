@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="#e64b3c"
+        android:background="@color/colorPrimary"
         android:padding="14dp"
         android:orientation="horizontal">
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/bgredportrait"
+    android:background="@color/colorPrimary"
     android:fitsSystemWindows="true"
     tools:showIn="@layout/activity_login">
 
@@ -86,10 +86,10 @@
 
         <android.support.v7.widget.CardView
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            app:cardUseCompatPadding="true"
             app:cardCornerRadius="20dp"
-            android:layout_height="wrap_content">
+            app:cardUseCompatPadding="true">
 
             <Button
                 android:id="@+id/btnRegister"

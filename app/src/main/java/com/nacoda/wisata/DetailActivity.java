@@ -19,6 +19,7 @@ import com.google.gson.GsonBuilder;
 import com.nacoda.wisata.gson.GsonDetail;
 import com.nacoda.wisata.presenter.Presenter;
 import com.nacoda.wisata.presenter.PresenterInterface;
+import com.nacoda.wisata.utilities.UIHelper;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -55,14 +56,9 @@ public class DetailActivity extends AppCompatActivity implements PresenterInterf
         dialogLoad.setContentView(R.layout.loading_dialog);
         setTitle("");
 
-        /** Set the progressbar color to white **/
         ProgressBar progressBar = dialogLoad.findViewById(R.id.pbLoad);
-        if (progressBar != null) {
-            progressBar.setVisibility(View.VISIBLE);
-            progressBar.setIndeterminate(true);
-            progressBar.getIndeterminateDrawable().setColorFilter(0xFFFFFFFF, PorterDuff.Mode.MULTIPLY);
-        }
-        /** Set the progressbar color to white **/
+        UIHelper.ProgressBarWhite(progressBar);
+
 
         presenter = new Presenter(this);
         presenter.request_detail(getApplicationContext(), dialogLoad, getIntent().getStringExtra("id_data"));
